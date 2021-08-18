@@ -1,0 +1,30 @@
+<mat-card class="film-card">
+  <mat-card-header>
+    <mat-card-title>{{ film.name }} </mat-card-title>
+    <mat-card-subtitle>{{ film.year }} </mat-card-subtitle>
+    <div class="fav">
+      <mat-icon class="favStar" *ngIf="film.fav; else noStar">star</mat-icon>
+      <ng-template #noStar><mat-icon>star_border</mat-icon></ng-template>
+    </div>
+  </mat-card-header>
+  <img mat-card-image [src]="film.imgUrl" alt="{{ film.name }}" />
+  <mat-card-content>
+    <p>{{ film.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-flat-button
+      color="warn"
+      *ngIf="!film.fav; else removeFav"
+      (click)="addToFavorite(film.id)"
+    >
+      <span> Добавить в избранное </span>
+      <ng-template #removeFav> Убрать из избранного</ng-template>
+    </button>
+    <ng-template #removeFav>
+      <button mat-stroked-button color="warn" (click)="addToFavorite(film.id)">
+        <span>Убрать из избранного </span>
+      </button>
+    </ng-template>
+  </mat-card-actions>
+</mat-card>

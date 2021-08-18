@@ -1,0 +1,31 @@
+.film-card {
+  max-width: 300px;
+  height: 790px;
+}
+
+.menu-card {
+  padding: 0px;
+}
+
+img {
+  height: 500px;
+}
+.mat-card-header {
+  justify-content: space-between;
+  text-align: start;
+  width: 100%;
+}
+.mat-card-content {
+  height: 120px;
+}
+.mat-card-title {
+  height: 40px;
+  max-width: 215px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.favStar {
+  color: #ffa200;
+}
